@@ -7,6 +7,7 @@ set -euo pipefail
 export DEBIAN_FRONTEND=noninteractive
 
 apt update -y
+
 apt install -y \
     build-essential \
     curl \
@@ -14,7 +15,8 @@ apt install -y \
     python3 \
     python3-dev \
     python3-venv \
-    ripgrep
+    ripgrep \
+    unzip
 
 
 ################################################################################
