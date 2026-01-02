@@ -33,21 +33,21 @@ INSTALL_DIR="$HOME/.local"
 NVIM_REPO="https://github.com/neovim/neovim"
 
 case "$(uname -s)" in
-  Linux)
-    nvim_os="linux"
-    ;;
-  Darwin)
-    nvim_os="macos"
-    ;;
+    Linux)
+        nvim_os="linux"
+        ;;
+    Darwin)
+        nvim_os="macos"
+        ;;
 esac
 
 case "$(uname -m)" in
-  *x86*)
-    nvim_arch="x86_64"
-    ;;
-  *)
-    nvim_arch="arm64"
-    ;;
+    *x86*)
+        nvim_arch="x86_64"
+        ;;
+    *)
+        nvim_arch="arm64"
+        ;;
 esac
 
 archive_name="nvim-${nvim_os}-${nvim_arch}.tar.gz"
