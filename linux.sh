@@ -6,18 +6,25 @@ set -eu
 ################################################################################
 export DEBIAN_FRONTEND=noninteractive
 
-apt update -y
+# Use sudo where needed if we're not running as root
+if [ "$(id -u)" -eq 0 ]; then
+    SUDO=""
+else
+    SUDO="sudo"
+fi
 
-apt install -y \
-    build-essential \
-    curl \
-    git \
-    python3 \
-    python3-dev \
-    python3-venv \
-    ripgrep \
-    unzip \
-&& :
+$SUDO apt update -y
+
+$SUDO apt install -y \
+      build-essential \
+      curl \
+      git \
+      python3 \
+      python3-dev \
+      python3-venv \
+      ripgrep \
+      unzip \
+    && :
 
 
 ################################################################################
